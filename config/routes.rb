@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
+  resources :profiles
+
   get 'dashboard/index'
   root :to => 'dashboard#index'
   resources :posts
   get 'posts/view'
   get 'dashboard/unsubscribe'
-
+  get 'dashboard/profile_view'
+  get 'dashboard/browse'
+  get 'dashboard/subscribe'
+  get 'dashboard/view'
   # devise_for :users
 
   devise_for :users, :controllers => { :registrations => "user/registrations" }
